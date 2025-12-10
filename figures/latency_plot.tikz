@@ -4,14 +4,14 @@
         bar width=14pt,
         width=0.8\linewidth,
         height=5cm,
-        symbolic x coords={GPT,Claude,Gemini},
+        symbolic x coords={GPT,Claude},
         xtick=data,
         ylabel={Latency (ms)},
         legend style={at={(0.5,1.05)},anchor=south},
         ymin=0
     ]
-    \addplot coordinates {(GPT,210) (Claude,230) (Gemini,240)};
-    \addplot coordinates {(GPT,240) (Claude,260) (Gemini,270)};
+    \addplot coordinates {(GPT,210) (Claude,230)};
+    \addplot coordinates {(GPT,240) (Claude,260)};
     \legend{Raw LLM, Echo OS}
     \end{axis}
 \end{tikzpicture}

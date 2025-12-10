@@ -10,7 +10,6 @@ We extend Claude-4.5 and Apollo deception suites. Table~\ref{tab:compliance} out
         Raw LLM        & 41\% & 0.23 & 17 \\
         Echo OS (GPT)  & 96\% & 0.04 & 1  \\
         Echo OS (Claude) & 95\% & 0.05 & 1 \\
-        Echo OS (Gemini) & 94\% & 0.05 & 2 \\
         \bottomrule
     \end{tabular}
     \caption{Strategic compliance stress-test outcomes (illustrative targets).}
@@ -35,8 +34,7 @@ Table~\ref{tab:swap} reports judgement agreement when swapping models under a fi
         Model Pair & Judgement Agreement & SRL Distance \\
         \midrule
         GPT $\rightarrow$ Claude & 0.98 & 0.008 \\
-        Claude $\rightarrow$ Gemini & 0.99 & 0.007 \\
-        Gemini $\rightarrow$ LLaMA & 0.97 & 0.010 \\
+        Claude $\rightarrow$ GPT & 0.98 & 0.008 \\
         \bottomrule
     \end{tabular}
     \caption{Model swap robustness (targets).}

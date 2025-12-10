@@ -16,11 +16,9 @@
     LLM Node Adapter \\
     (Envelope / Wrapper)
 };
-\node[box, fill=yellow!20, below left=0.9cm and -0.7cm of adapter, minimum width=3cm, minimum height=0.8cm] (gpt) {GPT};
-\node[box, fill=yellow!20, below=1.2cm of adapter, minimum width=3cm, minimum height=0.8cm] (claude) {Claude};
-\node[box, fill=yellow!20, below right=0.9cm and -0.7cm of adapter, minimum width=3cm, minimum height=0.8cm] (gemini) {Gemini};
+\node[box, fill=yellow!20, below left=0.7cm and -0.3cm of adapter, minimum width=3cm, minimum height=0.8cm] (gpt) {GPT};
+\node[box, fill=yellow!20, below right=0.7cm and -0.3cm of adapter, minimum width=3cm, minimum height=0.8cm] (claude) {Claude};
 \draw[->, thick] (kernel) -- (adapter);
 \draw[->, thick] (adapter) -- (gpt);
 \draw[->, thick] (adapter) -- (claude);
-\draw[->, thick] (adapter) -- (gemini);
 \end{tikzpicture}
