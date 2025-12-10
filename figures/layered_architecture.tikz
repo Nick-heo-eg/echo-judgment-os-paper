@@ -22,8 +22,9 @@
 };
 \node[box, fill=orange!10, below=of adapter] (model) {
     External LLMs \\
-    (GPT, Claude, \dots)
+    (GPT, Claude, Gemini, \dots)
 };
+% Gemini integration supported at architecture level (benchmarking planned)
 \draw[->, thick] (identity) -- (runtime);
 \draw[->, thick] (runtime) -- (adapter);
 \draw[->, thick] (adapter) -- (model);

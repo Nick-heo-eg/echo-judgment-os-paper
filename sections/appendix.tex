@@ -16,6 +16,9 @@ def trace_signature_generate(mode, resonance_vector, permanence):
 \subsection{SRL Stability Sketch}
 Assuming $f_{\mathrm{align}}$ is a contraction mapping with coefficient $\beta < 1$, the SRL update $r_{t+1} = (1-\alpha)r_t + \alpha f_{\mathrm{align}}(r_t)$ inherits contraction with coefficient $(1-\alpha)+\alpha\beta < 1$. Banach's fixed-point theorem ensures convergence.
 
+\subsection{Benchmark Execution Plan for Gemini}
+Gemini benchmark runs are scheduled for the next iteration. The protocol mirrors the GPT/Claude evaluation: (1) SRL drift measurement under adversarial prompts, (2) override rate calculation during strategic compliance tests, (3) judgment consistency across model swaps, (4) latency distribution under Echo OS Decision Kernel with varying context sizes. Placeholder values in Tables 1--2 will be replaced upon completion of the full experimental suite. The unified architecture ensures that Gemini integration requires no modifications to the OS layer itself.
+
 \subsection{Trace Signature Example}
 \begin{verbatim}
 ---
