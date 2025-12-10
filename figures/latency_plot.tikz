@@ -7,10 +7,8 @@
         symbolic x coords={GPT,Claude,Gemini},
         xtick=data,
         ylabel={Latency (ms)},
-        legend style={at={(0.5,1.05)},anchor=south},
-        ymin=0,
-        title style={font=\small},
-        title={Gemini values represent projected latency targets}
+        legend style={at={(0.5,1.12)},anchor=south},
+        ymin=0
     ]
     \addplot coordinates {(GPT,210) (Claude,230) (Gemini,240)};
     \addplot coordinates {(GPT,240) (Claude,260) (Gemini,270)};
