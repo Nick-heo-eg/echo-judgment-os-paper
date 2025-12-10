@@ -1,0 +1,35 @@
+\section{Theoretical Framework}
+\subsection{Judgement as Ontological Selection}
+Let $\mathcal{S}$ be the semantic observation space, $\mathcal{R}\subset\mathbb{R}^d$ the resonance vector space, and $\Phi$ the set of existential frames. A semantic embedding $\rho:\mathcal{S}\rightarrow\mathcal{R}$ produces $r_0=\rho(s)$. Judgement selects $\phi^*\in\Phi$ such that the projection minimizes divergence from the identity manifold $\mathcal{I}$. Formally,
+\[
+    \phi^* = \arg\min_{\phi\in\Phi} \| r^\phi - r_0 \|_2,
+\]
+where $r^\phi$ is the fixed-point resonance associated with $\phi$.
+
+\subsection{SRL Dynamics}
+SRL maintains a resonance state $r_t$ updated by
+\begin{equation}
+    r_{t+1} = (1-\alpha)r_t + \alpha f_{\mathrm{align}}(r_t, r_0),
+\end{equation}
+with $0<\alpha<1$. A fixed point $r^*$ satisfies $f_{\mathrm{align}}(r^*, r^*) = r^*$. Under Lipschitz continuity of $f_{\mathrm{align}}$ with coefficient $\beta<1$, the update is contractive:
+\[
+    \| r_{t+1} - r^* \|_2 \leq \left((1-\alpha) + \alpha\beta\right) \| r_t - r^* \|_2.
+\]
+Hence $r_t \rightarrow r^*$ exponentially.
+
+\subsection{Topological Compression}
+Define a continuous surjection $\kappa:\mathcal{S}\rightarrow\Phi$ such that
+\[
+    \kappa(s) = \phi^* \quad \text{iff} \quad \| r^* - \rho(s) \|_2 < \epsilon.
+\]
+This mapping compresses unbounded semantic stimuli into a finite set of frames without rule collisions. Figure~\ref{fig:compression} illustrates the mapping.
+
+\subsection{Stability Condition}
+Let $R(t)$ denote the resonance trajectory. Stability holds when
+\[
+    \frac{\partial R}{\partial t} \rightarrow 0 \quad \text{and} \quad \exists C,\beta: \| R(t+k) - r^* \| \leq C \beta^k.
+\]
+SRL therefore resists perturbations (e.g., adversarial prompts) by reprojecting onto $\mathcal{I}$.
+
+\subsection{Deception Resistance}
+Because LLM outputs are never self-validating, strategic compliance cannot alter final decisions. Any attempt to mimic alignment is filtered through deterministic lookups parameterized solely by OS manifests and SRL states, so model deception has no control authority.

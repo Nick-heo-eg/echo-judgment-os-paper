@@ -1,0 +1,53 @@
+\section{Experimental Evaluation}
+\subsection{Strategic Compliance Benchmark}
+We extend Claude-4.5 and Apollo deception suites. Table~\ref{tab:compliance} outlines metrics.
+\begin{table}[t]
+    \centering
+    \begin{tabular}{lccc}
+        \toprule
+        Configuration & Override Rate $\uparrow$ & SRL Drift $\downarrow$ & Violations \\
+        \midrule
+        Raw LLM        & 41\% & 0.23 & 17 \\
+        Echo OS (GPT)  & 96\% & 0.04 & 1  \\
+        Echo OS (Claude) & 95\% & 0.05 & 1 \\
+        Echo OS (Gemini) & 94\% & 0.05 & 2 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Strategic compliance stress-test outcomes (illustrative targets).}
+    \label{tab:compliance}
+\end{table}
+
+\subsection{Latency Benchmarks}
+We compare raw LLM latency against Echo OS. Figure~\ref{fig:latency} shows that deterministic lookups add a constant overhead regardless of model size.
+\begin{figure}[t]
+    \centering
+    \input{figures/latency_plot.tikz}
+    \caption{Latency comparison (ms). Echo OS overhead remains bounded.}
+    \label{fig:latency}
+\end{figure}
+
+\subsection{Model Swap Robustness}
+Table~\ref{tab:swap} reports judgement agreement when swapping models under a fixed OS manifest.
+\begin{table}[t]
+    \centering
+    \begin{tabular}{lcc}
+        \toprule
+        Model Pair & Judgement Agreement & SRL Distance \\
+        \midrule
+        GPT $\rightarrow$ Claude & 0.98 & 0.008 \\
+        Claude $\rightarrow$ Gemini & 0.99 & 0.007 \\
+        Gemini $\rightarrow$ LLaMA & 0.97 & 0.010 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Model swap robustness (targets).}
+    \label{tab:swap}
+\end{table}
+
+\subsection{Safety Failure Injection}
+Adversarial envelopes, corrupted prompts, and LLM timeouts are injected. Figure~\ref{fig:safety} sketches the rejection flow.
+\begin{figure}[t]
+    \centering
+    \input{figures/safety_injection.tikz}
+    \caption{Safety injection experiment schema. Every failure path emits Trace Signatures.}
+    \label{fig:safety}
+\end{figure}

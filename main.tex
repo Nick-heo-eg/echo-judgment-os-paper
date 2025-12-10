@@ -1,0 +1,53 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{fit}
+\usetikzlibrary{backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{algorithm}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{authblk}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape,
+  columns=fullflexible,
+  breaklines=true
+}
+
+\title{Echo OS: A Deterministic, Identity-Centered Runtime Architecture for Alignment-Resilient AI Systems}
+\author[1]{Dexa Research Collective}
+\affil[1]{Echo OS Existential Intelligence Lab}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract.tex}
+\input{sections/introduction.tex}
+\input{sections/related_work.tex}
+\input{sections/architecture.tex}
+\input{sections/theory.tex}
+\input{sections/implementation.tex}
+\input{sections/experiments.tex}
+\input{sections/discussion.tex}
+\input{sections/conclusion.tex}
+\input{sections/appendix.tex}
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

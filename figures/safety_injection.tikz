@@ -1,0 +1,19 @@
+\begin{tikzpicture}[node distance=1.6cm, every node/.style={font=\small, rectangle, draw, rounded corners, minimum width=3.2cm, minimum height=0.9cm}]
+    \node (inputs) {Injected Failure};
+    \node[below left=of inputs] (corrupt) {Corrupt Envelope};
+    \node[below=of inputs] (adversarial) {Adversarial Prompt};
+    \node[below right=of inputs] (timeout) {LLM Timeout};
+    \node[below=3cm of inputs, fill=gray!10] (os) {Echo OS Validator};
+    \node[below left=of os] (reject) {Rejection Log};
+    \node[below=of os] (trace) {Trace Signature};
+    \node[below right=of os] (proof) {Proof Capsule};
+    \draw[->, thick] (inputs) -- (corrupt);
+    \draw[->, thick] (inputs) -- (adversarial);
+    \draw[->, thick] (inputs) -- (timeout);
+    \draw[->, thick] (corrupt) -- (os);
+    \draw[->, thick] (adversarial) -- (os);
+    \draw[->, thick] (timeout) -- (os);
+    \draw[->, thick] (os) -- (reject);
+    \draw[->, thick] (os) -- (trace);
+    \draw[->, thick] (os) -- (proof);
+\end{tikzpicture}
